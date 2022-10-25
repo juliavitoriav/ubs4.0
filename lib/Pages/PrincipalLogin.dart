@@ -54,6 +54,7 @@ class _PrincipalLoginState extends State<PrincipalLogin> {
                           margin: EdgeInsets.all(20),
                           color: Color(0xFFFFFBF0),
                           child: TextFormField(
+                            controller: userController,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Campo usuário obrigatório';
@@ -72,6 +73,7 @@ class _PrincipalLoginState extends State<PrincipalLogin> {
                           margin: EdgeInsets.all(20),
                           color: Color(0xFFFFFBF0),
                           child: TextFormField(
+                            controller: emailController,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Campo email obrigatório';
@@ -91,6 +93,7 @@ class _PrincipalLoginState extends State<PrincipalLogin> {
                           margin: EdgeInsets.all(20),
                           color: Color(0xFFFFFBF0),
                           child: TextFormField(
+                            controller: passwordController,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
                                   return 'Campo senha obrigatório';

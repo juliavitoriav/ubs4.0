@@ -22,4 +22,9 @@ class User {
     data['password'] = password;
     return data;
   }
+
+  @override
+  String toString() {
+    return 'User{username: $username, email: $email, password: $password}';
+  }
 }

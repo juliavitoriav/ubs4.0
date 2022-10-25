@@ -6,14 +6,14 @@ import 'package:sqflite/sqflite.dart';
 class DBHelper {
   initDB() async {
     String databasesPath = await getDatabasesPath();
-    String databaseName = join(databasesPath, 'pacotes2.db');
+    String databaseName = join(databasesPath, 'pacotes3.db');
     var db = await openDatabase(
       databaseName,
       version: 1,
       onCreate: onCreate,
     );
 
-    print(databaseName);
+    print("BANCO DE DADOS: " + databaseName);
     return db;
   }
 
@@ -43,7 +43,7 @@ class DBHelper {
 
     sql =
         "INSERT INTO package (id, text, top, bottom, left, right,containerSize, url_image) VALUES (5, 'INSTRUÇÕES CONTRA COVID-19', '12',  '5',  '180', '1','200','lib/assets/images/card5.png');";
-    await db.execute(sql);
+    // await db.execute(sql);
 
     /// TABELA
     ///
@@ -118,7 +118,7 @@ class DBHelper {
 
     String sqlUser =
         'CREATE TABLE package4 (id INTEGER PRIMARY KEY, head varchar(100), user varchar(100), email varchar(100), password varchar(100));';
-    await db.execute(sql);
+    await db.execute(sqlUser);
 
     sqlUser =
         "INSERT INTO package4 (id, head, user, email, password) VALUES (1, 'Login', 'Maria', 'M.paula_123@gmail.com', '12345678');";
